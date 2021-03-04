@@ -14,15 +14,13 @@ int main()
     cout << "Jieun Park" << endl;
     cout << endl;
 
-    //instantiate class roster
-    struct classRoster {
-        classRoster();
-        ~classRoster();
-    };
-
+    //instantiate class roster 
+     classRoster();
+     classRoster(string studentID, int studentCount, int maxCapacity);
+    
     //Add
     const string student[] = {
-        "A1,John,Smith,John1989@gm ail.com,20,30,35,40,SECURITY",
+        "A1,John,Smith,John1989@gmail.com,20,30,35,40,SECURITY",
         "A2,Suzan,Erickson,Erickson_1990@gmailcom,19,50,30,40,NETWORK",
         "A3,Jack,Napoli,The_lawyer99yahoo.com,19,20,40,33,SOFTWARE",
         "A4,Erin,Black,Erin.black@comcast.net,22,50,58,40,SECURITY",
@@ -53,11 +51,11 @@ int main()
     //classRoster.printByDegreeProgram(SOFTWARE);
     cout << "Displaying roster by SOFTWARE program:" << endl;
     classRoster printByDegreeType(enum class degreeType SOFTWARE);
-    cout << endl << "Displaying roster by NETWORK program:" << endl;
+    cout << "Displaying roster by NETWORK program:" << endl;
     classRoster printByDegreeType(enum class degreeType NETWORK);
-    cout << endl << "Displaying roster by SECURITY program:" << endl;
+    cout << "Displaying roster by SECURITY program:" << endl;
     classRoster printByDegreeProgram(enum class degreeType SECURITY);
-    cout << endl << endl;
+    cout << endl;
 
     //classRoster.remove("A3");
     classRoster remove(const char[3]);
@@ -70,5 +68,5 @@ int main()
     cout << endl;
     
     //destructor
-    struct classRoster::~classRoster();
+    ~classRoster();
 };

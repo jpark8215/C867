@@ -4,58 +4,41 @@
 #include <string>
 using namespace std;
 
-void student (string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, enum class degreeType){
-	
-	studentID = studentID;
-	firstName = firstName;
-	lastName = lastName;
-	emailAddress = emailAddress;
-	age = age;
-	daysInCourse1 = daysInCourse1;
-	daysInCourse2 = daysInCourse2;
-	daysInCourse3 = daysInCourse3;
-	degreeType = degreeType;
+int main() {
 
-};
+	const int numDegreeTypes = 3;
+	enum class degreeType { SECURITY, NETWORK, SOFTWARE };
+	string courseTypeStrings[] = { "SECURITY", "NETWORK", "SOFTWARE" };
 
-student::~student() {
+	student(); {
+		string studentID = studentID;
+		string firstName = firstName;
+		string lastName = lastName;
+		string emailAddress = emailAddress;
+		int age = age;
+		int daysInCourse1 = daysInCourse1;
+		int daysInCourse2 = daysInCourse2;
+		int daysInCourse3 = daysInCourse3;
+		degreeType degreeType;
+	}
 
-};
+	void setStudentID(string studentID);
+	void setFirstName(string firstName);
+	void setLastName(string lastName);
+	void setEmailAddress(string emailAddress);
+	void setAge(int age);
+	void setDaysInCourse1(int daysInCourse1);
+	void setDaysInCourse2(int daysInCourse2);
+	void setDaysInCourse3(int daysInCourse3);
 
-void setStudentID(string studentID);
-void setFirstName(string firstName);
-void setLastName(string lastName);
-void setEmailAddress(string emailAddress);
-void setAge(int age);
-void setDaysInCourse1(int daysInCourse1); 
-void setDaysInCourse2(int daysInCourse2);
-void setDaysInCourse3(int daysInCourse3);
-enum class degreeType degreeType;
+	string getStudentID();
+	string getFirstName();
+	string getLastName();
+	string getEmailAddress();
+	int getAge();
+	int getDaysInCourse1();
+	int getDaysInCourse2();
+	int getDaysInCourse3();
 
-string student::getStudentID() {
-	return studentID;
-};
-string student::getFirstName() {
-	return firstName;
-};
-string student::getLastName() {
-	return lastName;
-};
-string student::getEmailAddress() {
-	return emailAddress;
-};
-int student::getAge() {
-	return age;
-};
-int student::getDaysInCourse1() {
-	return daysInCourse1;
-};
-int student::getDaysInCourse2() {
-	return daysInCourse2;
-};
-int student::getDaysInCourse3() {
-	return daysInCourse3;
-};
-enum class degreeType getDegreeType() {
-	return;
-};
+	return 0;
+}

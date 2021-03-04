@@ -7,15 +7,15 @@
 using namespace std;
 
 class classRoster{
-private:
+public:
 	string studentID;
 	int studentCount;
 	int maxCapacity;
 
-	classRoster(const string studentID, int studentCount, int maxCapacity);
-		~classRoster();
+	classRoster();
 
-public:
+	classRoster(const string studentID, int studentCount, int maxCapacity);
+	~classRoster();
 
 	void add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, degreeType degreeType);
 	void remove(string studentID);
@@ -25,5 +25,4 @@ public:
 	void printDegreeType(degreeType degreeType);
 
 	void getClassRosterArray();
-
 };

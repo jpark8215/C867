@@ -6,55 +6,36 @@
 #include <vector>
 using namespace std;
 
+int main(){
     //array of pointers
-classRoster::classRoster(const string studentID, int studentCount, int maxCapacity) {
-
-    this; studentCount = studentCount;
-    this; classRosterArray = new [int studentCount * maxCapacity];
-    this; maxCapacity = maxCapacity;
+    student* classRosterArray[5];
 
     //Parse each set    
-    int records = 0;   
-    while (records < studentCount)
-    {
-        vector <string> tokens;
-        stringstream streamInput(student[5]);
-        string nextToken;
+    int records = 0;
+    while (
 
-        while (getline(streamInput, nextToken, ',')){
-            tokens.push_back(nextToken);
-        }
     //Add each student object
-    classRosterArray[records] = new student(tokens[0], tokens[1], tokens[2], tokens[3], age, daysInCourse, degreeType);
-    records++;
+    classRosterArray[] = new student(studentID, firstName, lastName, emailAddress, age, daysInCourse, degreeType);
+    studentCount++;
+    
 
     // convert strings to int
-    int age = std::stoi(tokens[4]);
-    int daysInCourse[3] = { std::stoi(tokens[5]), std::stoi(tokens[6]), std::stoi(tokens[7]) };
+    
 
     // convert string to enum
-    enum class degreeType = invalid;
-    if (tokens[8].compare("SECURITY") == 0) {
-        degreeType = degreeType::SECURITY;
+    degreeType roster::convert(string str){ 
+        if (str == "SECURITY") return SECURITY;
+        else if (str == "NETWORK") return NETWORK;
+        else if (str == "SOFTWARE") return SOFTWARE;
+        else return NONE;
     }
-    else if (tokens[8].compare("NETWORK") == 0) {
-        degreeType = degreeType::NETWORK;
-    }
-    else if (tokens[8].compare("SOFTWARE") == 0) {
-        degreeType = degreeType::SOFTWARE;
-    }
-    else {
-        degreeType = invalid;
-    }    
-    }
+ }
 
     //Implement the destructor
-            classRoster::~classRoster(); {
-    }
+    classRoster::~classRoster();
 
     // Implement add
-    void classRoster::add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeType degreeType); {
-        int daysInCourse[3] = { daysInCourse1, daysInCourse2, daysInCourse3 };
+    void classRoster::add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeType); {
         classRosterArray[studentCount] = new student(studentID, firstName, lastName, emailAddress, age, daysInCourse, degreeType);
         studentCount++;
     }
@@ -80,12 +61,6 @@ classRoster::classRoster(const string studentID, int studentCount, int maxCapaci
     void classRoster::printAll() {
         for (int i = 0; i < studentCount; ++i) {
             classRosterArray[i] -> print();
-        }
-    }
-    //Implement printall
-    void classRoster::printAll() {
-        for (int i = 0; i < studentCount; ++i) {
-            classRosterArray[i]->print();
         }
     }
     //Implement printAverageDaysInCourse
