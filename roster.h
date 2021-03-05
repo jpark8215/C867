@@ -1,28 +1,28 @@
-
-#include <iostream>
 #include "degree.h"
 #include "student.h"
-#include <string>
-#include <array>
+
+#include <iostream>
+
 using namespace std;
 
-class classRoster{
+class roster {
+
 public:
+
 	string studentID;
 	int studentCount;
-	int maxCapacity;
+	student* students;
 
-	classRoster();
+	roster();
+	roster(string studentID, int studentCount, student* student);
 
-	classRoster(const string studentID, int studentCount, int maxCapacity);
-	~classRoster();
+	~roster();
 
-	void add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, degreeType degreeType);
+	void add(string studentID, string firstName, string lastName, string emailAddress, int age, int* daysInCourse[], degreeType degreeType);
 	void remove(string studentID);
 	void printAll();
 	void printAverageDaysInCourse(string studentID);
 	void printInvalidEmails();
 	void printDegreeType(degreeType degreeType);
 
-	void getClassRosterArray();
 };

@@ -1,23 +1,45 @@
 #include "degree.h"
 #include "student.h"
 #include "roster.h"
+
 #include <iostream>
 #include <string>
-#include <vector>
+
+
 using namespace std;
 
 int main(){
     //array of pointers
-    student* classRosterArray[5];
+    student* rosterArray[5];
+    roster (string studentID, int studentCount, student* students) {
+        this->studentID = studentID;
+        this->studentCount = 
+        this->student
+    }
 
     //Parse each set    
-    int records = 0;
-    while (
+    void roster::parseDataAndAdd(string rawData) { 
+        vector<string> dataPoints; 
+        stringstream inputSStream(rawData); 
 
-    //Add each student object
-    classRosterArray[] = new student(studentID, firstName, lastName, emailAddress, age, daysInCourse, degreeType);
-    studentCount++;
-    
+        while (inputSStream.good()) { 
+            string data;
+            getline(inputSStream, data, ',');
+            dataPoints.push_back(data);
+        }
+        //Add each student object
+        add(dataPoints.at(0),
+            dataPoints.at(1),
+            dataPoints.at(2),
+            dataPoints.at(3),
+            stoi(dataPoints.at(4)),
+            stoi(dataPoints.at(5)),
+            stoi(dataPoints.at(6)),
+            stoi(dataPoints.at(7)),
+            convert(dataPoints.at(8))
+        );
+    }
+   
 
     // convert strings to int
     
@@ -29,23 +51,24 @@ int main(){
         else if (str == "SOFTWARE") return SOFTWARE;
         else return NONE;
     }
+    return 0;
  }
 
     //Implement the destructor
-    classRoster::~classRoster();
+    roster::~roster();
 
     // Implement add
-    void classRoster::add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeType); {
-        classRosterArray[studentCount] = new student(studentID, firstName, lastName, emailAddress, age, daysInCourse, degreeType);
+    void roster::add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse[], degreeType); {
+        rosterArray[studentCount] = new student(studentID, firstName, lastName, emailAddress, age, daysInCourse, degreeType);
         studentCount++;
     }
     // Implement remove
-    void classRoster::remove(string studentID) {
+    void roster::remove(string studentID) {
         bool studentIDFound = false;
         for (int i = 0; (i < studentCount) && !studentIDFound; ++i) {
-            if (classRosterArray[i] -> GetStudentID() == studentID) 
+            if (rosterArray[i] -> GetStudentID() == studentID) 
             {
-                classRosterArray[i] = classRosterArray[studentCount - 1];
+                rosterArray[i] = rosterArray[studentCount - 1];
                 --studentCount;
                 studentIDFound = true;
             }
@@ -58,27 +81,27 @@ int main(){
         }
     }   
     // Implement printall
-    void classRoster::printAll() {
+    void roster::printAll() {
         for (int i = 0; i < studentCount; ++i) {
-            classRosterArray[i] -> print();
+            rosterArray[i] -> print();
         }
     }
     //Implement printAverageDaysInCourse
-    void classRoster::printAverageDaysInCourse(string studentID) {
+    void roster::printAverageDaysInCourse(string studentID) {
         for (int i = 0; i < studentCount; ++i) {
-            if (classRosterArray[i]->GetStudentID() == studentID) {
-                cout << "Student ID " << classRosterArray[i]->GetStudentID() << ": ";
-                int* days = classRosterArray[i]->GetDaystoComplete();
-                cout << "Average number of days in courses: " << (days[0] + days[1] + days[2]) / 3 << endl;
+            if (rosterArray[i]->GetStudentID() == studentID) {
+                cout << "Student ID " << rosterArray[i]->GetStudentID() << ": ";
+                int* daysInCourse = rosterArray[i]->GetDaysInCourse();
+                cout << "Average number of days in courses: " << (daysInCourse[0] + daysInCourse[1] + daysInCourse[2]) / 3 << endl;
                 return;
             }
         }
     }
     //Implement printInvalidEmails
-    void classRoster::printInvalidEmails() {
+    void roster::printInvalidEmails() {
         for (int i = 0; i < studentCount; ++i)
         {
-            string emailAddress = classRosterArray[i]->GetEmail();
+            string emailAddress = rosterArray[i]->GetEmail();
             u_long arroba = emailAddress.find('@');
             u_long period = emailAddress.find('.', arroba);
 
@@ -100,10 +123,10 @@ int main(){
         }
     }
     //Implement printByDegreeProgram
-    void classRoster::printByDegreeType(degreeType degreeType) {
+    void roster::printByDegreeType(degreeType degreeType) {
         for (int i = 0; i < studentCount; ++i) {
-            if (classRosterArray[i]->GetDegreeProgram() == degreeType) {
-                classRosterArray[i]->print();
+            if (rosterArray[i]->GetDegreeType() == degreeType) {
+                rosterArray[i]->print();
             }
         }
     }

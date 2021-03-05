@@ -1,44 +1,79 @@
 #include "degree.h"
 #include "student.h"
+
 #include <iostream>
-#include <string>
+
 using namespace std;
 
 int main() {
 
-	const int numDegreeTypes = 3;
-	enum class degreeType { SECURITY, NETWORK, SOFTWARE };
-	string courseTypeStrings[] = { "SECURITY", "NETWORK", "SOFTWARE" };
+    student(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse[], degreeType degreeType) {
+        this->studentID = studentID;
+        this->firstName = firstName;
+        this->lastName = lastName;
+        this->age = age;
+        this->emailAddress = emailAddress;
+        this->daysInCourse = int daysInCourse[];
+        for (int i = 0; i < 3; i++) {
+            this->daysInCourse[i] = daysInCourses[i];
+        }
+        this->degreeType = degreeType;
+    }
 
-	student(); {
-		string studentID = studentID;
-		string firstName = firstName;
-		string lastName = lastName;
-		string emailAddress = emailAddress;
-		int age = age;
-		int daysInCourse1 = daysInCourse1;
-		int daysInCourse2 = daysInCourse2;
-		int daysInCourse3 = daysInCourse3;
-		degreeType degreeType;
-	}
+    string student::getStudentID() const {
+        return studentID;
+    }
+    string student::getFirstName() const {
+        return firstName;
+    }
+    string student::getLastName() const {
+        return lastName;
+    }
+    string student::getEmailAddress() const {
+        return emailAddress;
+    }
+    int student::getAge() const {
+        return age;
+    }
+    int* student::getDaysInCourse() {
+        return daysInCourse;
+    }
+    degreeType student::getDegreeType() const {
+        return degreeType;
+    }
 
-	void setStudentID(string studentID);
-	void setFirstName(string firstName);
-	void setLastName(string lastName);
-	void setEmailAddress(string emailAddress);
-	void setAge(int age);
-	void setDaysInCourse1(int daysInCourse1);
-	void setDaysInCourse2(int daysInCourse2);
-	void setDaysInCourse3(int daysInCourse3);
 
-	string getStudentID();
-	string getFirstName();
-	string getLastName();
-	string getEmailAddress();
-	int getAge();
-	int getDaysInCourse1();
-	int getDaysInCourse2();
-	int getDaysInCourse3();
-
-	return 0;
+    void student::setStudentID(string studentID) {
+        this->studentID = studentID;
+    }
+    void student::setFirstName(string firstName) {
+        this->firstName = firstName;
+    }
+    void student::setLastName(string lastName) {
+        this->lastName = lastName;
+    }
+    void student::setEmailAddress(string emailAddress) {
+        this->emailAddress = emailAddress;
+    }
+    void student::setAge(int age) {
+        this->age = age;
+    }
+    void student::setDaysInCourse(int daysInCourse[]) {
+        for (int i = 0; i < 3; i++) {
+            this->daysInCourse[i] = daysInCourse[i];
+        }
+    }
+    void student::setDegreeType(DegreeType degreeType) {
+        this->degreeType = degreeType;
+    }
 }
+
+void student::print() {
+    cout << studentID << "\t"
+    << "First Name: " << firstName << "\t"
+    << "Last Name: " << lastName << "\t"
+    << "Age: " << age << "\t"
+    << "daysInCourse: {" << daysInCourse[0] << ", " << daysInCourse[1] << ", " << daysInCourse[2] << "}" << "\t"
+    << "Degree Program: " << degreeTypeStrings[getDegreeType()];
+}
+
