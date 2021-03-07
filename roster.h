@@ -9,14 +9,14 @@ class roster {
 
 public:
 
-	string studentID;
-	int studentCount;
-	student* students;
+	int maxCapacity;
+	int studentNumber;
+	student** students;
 
-	roster();
-	roster(string studentID, int studentCount, student* student);
 
+	roster(int maxCapacity, int studentNumber, student** students);
 	~roster();
+
 
 	void add(string studentID, string firstName, string lastName, string emailAddress, int age, int* daysInCourse[], degreeType degreeType);
 	void remove(string studentID);
