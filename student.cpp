@@ -6,15 +6,15 @@
 using namespace std;
 
     //constructor using parameters
- student::student(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse[], degreeType degreeType) {
+student::student(string studentID, string firstName, string lastName, string emailAddress, int age, int* daysInCourse, enum degreeType) {
           this->studentID = studentID;
           this->firstName = firstName;
           this->lastName = lastName;
           this->age = age;
           this->emailAddress = emailAddress;
-            for (int i = 0; i < 3; i++) {
-                this->daysInCourse[i] = daysInCourse[i];
-            }
+          for (int i = 0; i < 3; i++) {
+              this->daysInCourse[i] = daysInCourse[i];
+          }
           this->degreeType = degreeType;
         }
   
@@ -36,40 +36,40 @@ using namespace std;
     void student::setAge(int age) {
         this->age = age;
     }
-    void student::setDaysInCourse(int* daysInCourse[]) {
+    void student::setDaysInCourse(int* daysInCourse) {
         for (int i = 0; i < 3; i++) {
             this->daysInCourse[i] = daysInCourse[i];
         }
     }
-    void setDegreeType(enum class degreeType) {
-        this->degreeType = degreeType;
+    void setDegreeType(enum degreeType) {
+        enum class degreeType;
     }
 
 
-    string getStudentID() const {
+    string student::getStudentID() {
         return studentID;
     }
-    string getFirstName() const {
+    string student::getFirstName() {
         return firstName;
     }
-    string getLastName() const {
+    string student::getLastName() {
         return lastName;
     }
-    string getEmailAddress() const {
+    string student::getEmailAddress() {
         return emailAddress;
     }
-    int getAge() const {
+    int student::getAge() {
         return age;
     }
-    int* getDaysInCourse() {
+    int* student::getDaysInCourse() {
         return daysInCourse;
     }
-    enum class degreeType getDegreeType() {
-        return degreeType;
+    enum degreeType getDegreeType() {
+        return;
     }
 
 
-    void print() {
+    void student::print() {
         cout << studentID << "\t"
             << "First Name: " << firstName << "\t"
             << "Last Name: " << lastName << "\t"
@@ -77,4 +77,3 @@ using namespace std;
             << "daysInCourse: {" << daysInCourse[0] << ", " << daysInCourse[1] << ", " << daysInCourse[2] << "}" << "\t"
             << "Degree Program: " << degreeTypeStrings[getDegreeType()];
     }
-}

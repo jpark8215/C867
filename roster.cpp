@@ -21,7 +21,7 @@ roster::roster(const string studentData[], int studentNumber, int parameter) {
     //parse each set    
     for (int i = 0; i < studentNumber; i++) {
         size_t rhs = studentData[i].find(",");
-        studentData[i].studentID = student[i].substr(0, rhs);
+        roster[i].studentID = studentData[i].substr(0, rhs);
 
         size_t lhs = rhs + 1;
         rhs = studentData[i].find(",", lhs);
@@ -59,7 +59,7 @@ roster::roster(const string studentData[], int studentNumber, int parameter) {
 
 
         //add each student obj to array    
-roster[classRoster] = new student(parameter[0], parameter[1], parameter[2], tokens[3], age, daysInCourse, degreeType);
+roster[classRoster] = new student(parameter[0], parameter[1], parameter[2], parameter[3], age, daysInCourse, degreeType);
 classRoster++;
 
 int age = stoi(parameter[4]);
@@ -80,7 +80,7 @@ roster::~roster() {
 
 
     //add
- void roster::add(string studentID, string firstName, string lastName, string emailAddress, int age, int* daysInCourse[], degreeType); {
+ void roster::add(string studentID, string firstName, string lastName, string emailAddress, int age, int* daysInCourse, degreeType); {
      roster[studentNumber] = new student(studentID, firstName, lastName, emailAddress, age, daysInCourse, degreeType);
      studentNumber++;
     }
@@ -90,7 +90,7 @@ roster::~roster() {
 void roster::remove(string studentID) {
      bool studentIDFound = false;
      for (int i = 0; (i < studentNumber) && !studentIDFound; ++i) {
-         if (roster[i]->GetStudentID() == studentID) {
+         if (roster[i]-> GetStudentID() == studentID) {
              roster[i] = roster[studentNumber - 1];
              --studentNumber;
              studentIDFound = true;
@@ -108,7 +108,7 @@ void roster::remove(string studentID) {
     //printall
 void roster::printAll() {
      for (int i = 0; i < studentNumber; ++i) {
-            roster[i]->print();
+            roster[i]-> print();
      }
 }
 
@@ -116,9 +116,9 @@ void roster::printAll() {
     //printAverageDaysInCourse
 void roster::printAverageDaysInCourse(string studentID) {
      for (int i = 0; i < studentNumber; ++i) {
-         if (roster[i]->GetStudentID() = studentID) {
-                cout << "Student ID " << roster[i]->GetStudentID() << ": ";
-                int* daysInCourse = roster[i]->GetDaysInCourse();
+         if (roster[i]-> GetStudentID() = studentID) {
+                cout << "Student ID " << roster[i]-> GetStudentID() << ": ";
+                int* daysInCourse = roster[i]-> GetDaysInCourse();
                 cout << "Average number of days in courses: " << (daysInCourse[0] + daysInCourse[1] + daysInCourse[2]) / 3 << endl;
                 return;
          }
@@ -129,7 +129,7 @@ void roster::printAverageDaysInCourse(string studentID) {
     //printInvalidEmails
 void roster::printInvalidEmails() {
      for (int i = 0; i < studentNumber; ++i) {
-         string emailAddress = roster[i]->GetEmail();
+         string emailAddress = roster[i]-> GetEmail();
          string arroba = emailAddress.find('@');
          string period = emailAddress.find('.', arroba);
 
@@ -152,8 +152,8 @@ void roster::printInvalidEmails() {
     //printByDegreeProgram
 void roster::printByDegreeType(degreeType degreeType) {
      for (int i = 0; i < studentNumber; ++i) {
-         if (students[i]->GetDegreeType() == degreeType) {
-                students[i]->print();
+         if (roster[i]-> GetDegreeType() == degreeType) {
+                roster[i]-> print();
          }
      }
 }

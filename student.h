@@ -20,7 +20,7 @@ public:
 	int* daysInCourse;
 	enum class degreeType;
 
-	student(string studentID, string firstName, string lastName, string emailAddress, int age, int* daysInCourse[], enum class degreeType);
+	student(string studentID, string firstName, string lastName, string emailAddress, int age, int* daysInCourse, enum class degreeType);
 	~student();
 
 	// setter 
@@ -29,7 +29,7 @@ public:
 	void setLastName(string lastName);
 	void setEmailAddress(string emailAddress);
 	void setAge(int age);
-	void setDaysInCourse(int* daysInCourse[]);
+	void setDaysInCourse(int* daysInCourse);
 	void setDegreeType(degreeType degreeType);
 
 	// getter
