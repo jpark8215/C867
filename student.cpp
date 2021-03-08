@@ -5,15 +5,15 @@
 
 using namespace std;
 
-
- student::student(string studentID, string firstName, string lastName, string emailAddress, int age, int* daysInCourse[], degreeType degreeType) {
+    //constructor using parameters
+ student::student(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse[], degreeType degreeType) {
           this->studentID = studentID;
           this->firstName = firstName;
           this->lastName = lastName;
           this->age = age;
           this->emailAddress = emailAddress;
             for (int i = 0; i < 3; i++) {
-                this->daysInCourse[i] = daysInCourses[i];
+                this->daysInCourse[i] = daysInCourse[i];
             }
           this->degreeType = degreeType;
         }
@@ -21,22 +21,22 @@ using namespace std;
  student::~student() {
  }
 
-    void setStudentID(string studentID) {
+    void student::setStudentID(string studentID) {
         this->studentID = studentID;
     }
-    void setFirstName(string firstName) {
+    void student::setFirstName(string firstName) {
         this->firstName = firstName;
     }
-    void setLastName(string lastName) {
+    void student::setLastName(string lastName) {
         this->lastName = lastName;
     }
-    void setEmailAddress(string emailAddress) {
+    void student::setEmailAddress(string emailAddress) {
         this->emailAddress = emailAddress;
     }
-    void setAge(int age) {
+    void student::setAge(int age) {
         this->age = age;
     }
-    void setDaysInCourse(int daysInCourse[]) {
+    void student::setDaysInCourse(int* daysInCourse[]) {
         for (int i = 0; i < 3; i++) {
             this->daysInCourse[i] = daysInCourse[i];
         }
