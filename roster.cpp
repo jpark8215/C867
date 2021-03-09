@@ -1,13 +1,12 @@
-#include "degree.h"
-#include "student.h"
-#include "roster.h"
-
 #include <iostream>
 #include <string>
 #include <vector>
 
-using namespace std;
+#include "degree.h"
+#include "student.h"
+#include "roster.h"
 
+using namespace std;
 
 //array of pointers
 roster::roster(int studentNumber, int parameter, student* classRoster) {
@@ -60,9 +59,9 @@ roster::roster(int studentNumber, int parameter, student* classRoster) {
 }
 
     //add each student obj to array    
-roster::classRoster[i] = new student(string studentID, string firstName, string lastName, string emailAddress, int age, int* daysInCourse, enum degreeType);
-    i++;
-
+roster::classRoster[i] = new student(string studentID, string firstName, string lastName, string emailAddress, int age, int* daysInCourse, enum degreeType){
+        i++;
+        }
 
 
     //destructor

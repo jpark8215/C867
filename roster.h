@@ -1,11 +1,11 @@
 #ifndef roster_h
 #define roster_h
 
-#include "degree.h"
-#include "student.h"
-
 #include <iostream>
 #include <string>
+
+#include "degree.h"
+#include "student.h"
 
 using namespace std;
 

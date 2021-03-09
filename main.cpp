@@ -1,9 +1,9 @@
+#include<iostream>
+#include <string>
+
 #include "degree.h"
 #include "student.h"
 #include "roster.h"
-
-#include<iostream>
-#include <string>
 
 using namespace std;
 

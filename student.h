@@ -1,10 +1,10 @@
 #ifndef student_h
 #define student_h
 
-#include "degree.h"
-
 #include <iostream>
 #include <string>
+
+#include "degree.h"
 
 using namespace std;
 	
