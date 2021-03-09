@@ -5,6 +5,7 @@
 #include "student.h"
 
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -16,10 +17,10 @@ public:
 	int parameter;
 	student* classRoster;
 
-	roster(const string studentData[], int studentNumber, int parameter);
+	roster(int studentNumber, int parameter, student* classRoster);
 	~roster();
 
-	void add(string studentID, string firstName, string lastName, string emailAddress, int age, int* daysInCourse[], degreeType degreeType);
+	void add(string studentID, string firstName, string lastName, string emailAddress, int age, int* daysInCourse, degreeType degreeType);
 	void remove(string studentID);
 	void printAll();
 	void printAverageDaysInCourse(string studentID);

@@ -23,7 +23,7 @@ int main() {
      "A5,Jieun,Park,jpar511@wgu.edu,39,10,20,30,SOFTWARE"
     };
 
-    //instantiate class roster dd
+    //instantiate class roster
     roster* classRoster = new roster(studentData, 5, 20);
    
     //Add students to array

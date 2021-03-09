@@ -8,20 +8,22 @@
 
 using namespace std;
 
-roster::roster(const string studentData[], int studentNumber, int parameter) {
-    
-    //array of pointers
+
+//array of pointers
+roster::roster(int studentNumber, int parameter, student* classRoster) {
+    this->studentNumber = studentNumber;
     const int studentNumber = 5;
-    vector<roster*> classRoster;
-    for (int i = 0; i < studentNumber; ++i) {
-        roster.push_back(new roster());
+    this->parameter = parameter;
+    this->classRoster = new student[studentNumber];
+    for (int i = 0; i < 5; ++i) {
+        classRoster[i - 1] = new student();
     }
 
 
     //parse each set    
     for (int i = 0; i < studentNumber; i++) {
         size_t rhs = studentData[i].find(",");
-        roster[i].studentID = studentData[i].substr(0, rhs);
+        studentData[i].studentID = student[i].substr(0, rhs);
 
         size_t lhs = rhs + 1;
         rhs = studentData[i].find(",", lhs);
@@ -57,20 +59,9 @@ roster::roster(const string studentData[], int studentNumber, int parameter) {
     }
 }
 
-
-        //add each student obj to array    
-roster[classRoster] = new student(parameter[0], parameter[1], parameter[2], parameter[3], age, daysInCourse, degreeType);
-classRoster++;
-
-int age = stoi(parameter[4]);
-int daysInCourse[] = { stoi(parameter[5]), stoi(parameter[6]), stoi(parameter[7]) };
-
-degreeType roster::convert(string str) {
-      if (str == "SECURITY") return SECURITY;
-      else if (str == "NETWORK") return NETWORK;
-      else if (str == "SOFTWARE") return SOFTWARE;
-      else return NONE;
-      }
+    //add each student obj to array    
+roster::classRoster[i] = new student(string studentID, string firstName, string lastName, string emailAddress, int age, int* daysInCourse, enum degreeType);
+    i++;
 
 
 
@@ -80,7 +71,7 @@ roster::~roster() {
 
 
     //add
- void roster::add(string studentID, string firstName, string lastName, string emailAddress, int age, int* daysInCourse, degreeType); {
+void roster::add(string studentID, string firstName, string lastName, string emailAddress, int age, int* daysInCourse, degreeType); {
      roster[studentNumber] = new student(studentID, firstName, lastName, emailAddress, age, daysInCourse, degreeType);
      studentNumber++;
     }
@@ -90,8 +81,8 @@ roster::~roster() {
 void roster::remove(string studentID) {
      bool studentIDFound = false;
      for (int i = 0; (i < studentNumber) && !studentIDFound; ++i) {
-         if (roster[i]-> GetStudentID() == studentID) {
-             roster[i] = roster[studentNumber - 1];
+         if (classRoster[i] -> GetStudentID() == studentID) {
+             classRoster[i] = classRoster[studentNumber - 1];
              --studentNumber;
              studentIDFound = true;
          }
@@ -108,7 +99,7 @@ void roster::remove(string studentID) {
     //printall
 void roster::printAll() {
      for (int i = 0; i < studentNumber; ++i) {
-            roster[i]-> print();
+            classRoster[i]-> print();
      }
 }
 
@@ -116,9 +107,9 @@ void roster::printAll() {
     //printAverageDaysInCourse
 void roster::printAverageDaysInCourse(string studentID) {
      for (int i = 0; i < studentNumber; ++i) {
-         if (roster[i]-> GetStudentID() = studentID) {
-                cout << "Student ID " << roster[i]-> GetStudentID() << ": ";
-                int* daysInCourse = roster[i]-> GetDaysInCourse();
+         if (classRoster[i]-> GetStudentID() = studentID) {
+                cout << "Student ID " << classRoster[i]-> GetStudentID() << ": ";
+                int* daysInCourse = classRoster[i]-> GetDaysInCourse();
                 cout << "Average number of days in courses: " << (daysInCourse[0] + daysInCourse[1] + daysInCourse[2]) / 3 << endl;
                 return;
          }
@@ -129,7 +120,7 @@ void roster::printAverageDaysInCourse(string studentID) {
     //printInvalidEmails
 void roster::printInvalidEmails() {
      for (int i = 0; i < studentNumber; ++i) {
-         string emailAddress = roster[i]-> GetEmail();
+         string emailAddress = classRoster[i]-> GetEmail();
          string arroba = emailAddress.find('@');
          string period = emailAddress.find('.', arroba);
 
@@ -152,8 +143,8 @@ void roster::printInvalidEmails() {
     //printByDegreeProgram
 void roster::printByDegreeType(degreeType degreeType) {
      for (int i = 0; i < studentNumber; ++i) {
-         if (roster[i]-> GetDegreeType() == degreeType) {
-                roster[i]-> print();
+         if (classRoster[i]-> GetDegreeType() == degreeType) {
+             classRoster[i]-> print();
          }
      }
 }
