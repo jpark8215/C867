@@ -13,14 +13,13 @@ class roster {
 
 public:
 
-	int studentNumber;
-	int parameter;
+	const int studentNumber = 5;
 	student* classRoster;
 
-	roster(int studentNumber, int parameter, student* classRoster);
+	roster(int studentNumber, student* classRoster);
 	~roster();
 
-	void add(string studentID, string firstName, string lastName, string emailAddress, int age, int* daysInCourse, degreeType degreeType);
+	void add(string studentID, string firstName, string lastName, string emailAddress, int age, int *daysInCourse, degreeType degreeType);
 	void remove(string studentID);
 	void printAll();
 	void printAverageDaysInCourse(string studentID);
@@ -29,7 +28,6 @@ public:
 
 private:
 	int studentNumber;
-	int parameter;
 	student* classRoster;
 
 };

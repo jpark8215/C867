@@ -8,16 +8,11 @@
 
 using namespace std;
 
-//array of pointers
-roster::roster(int studentNumber, int parameter, student* classRoster) {
+    //array of pointers
+roster::roster(int studentNumber, student* classRoster) {
     this->studentNumber = studentNumber;
-    const int studentNumber = 5;
-    this->parameter = parameter;
-    this->classRoster = new student[studentNumber];
-    for (int i = 0; i < 5; ++i) {
-        classRoster[i - 1] = new student();
-    }
-
+    this->classRoster = new student(studentData[]);
+   
 
     //parse each set    
     for (int i = 0; i < studentNumber; i++) {
@@ -58,21 +53,34 @@ roster::roster(int studentNumber, int parameter, student* classRoster) {
     }
 }
 
-    //add each student obj to array    
-roster::classRoster[i] = new student(string studentID, string firstName, string lastName, string emailAddress, int age, int* daysInCourse, enum degreeType){
-        i++;
-        }
-
-
     //destructor
 roster::~roster() {
+    delete classRoster;
+
+}
+
+
+    //add each student obj to array    
+roster::classRoster = new student(string studentID, string firstName, string lastName, string emailAddress, int age, int *daysInCourse, enum degreeType) {
+        for (int i = 0; i < 5; ++i) {
+    classRoster[i - 1] = new student();
+        }
 }
 
 
     //add
-void roster::add(string studentID, string firstName, string lastName, string emailAddress, int age, int* daysInCourse, degreeType); {
-     roster[studentNumber] = new student(studentID, firstName, lastName, emailAddress, age, daysInCourse, degreeType);
-     studentNumber++;
+void roster::add(string studentID, string firstName, string lastName, string emailAddress, int age, int *daysInCourse, degreeType) {
+    this->classRoster = new student;
+    this->studentID = studentID;
+    this->firstName = firstName;
+    this->lastName = lastName;
+    this->age = age;
+    this->emailAddress = emailAddress;
+    for (int i = 0; i < 3; i++) {
+        this->daysInCourse[i] = daysInCourse[i];
+    }
+    this->degreeType = degreeType;
+
     }
 
 
@@ -80,9 +88,9 @@ void roster::add(string studentID, string firstName, string lastName, string ema
 void roster::remove(string studentID) {
      bool studentIDFound = false;
      for (int i = 0; (i < studentNumber) && !studentIDFound; ++i) {
-         if (classRoster[i] -> GetStudentID() == studentID) {
-             classRoster[i] = classRoster[studentNumber - 1];
-             --studentNumber;
+         if (classRoster[i] -> GetStudentID()) {
+             classRoster[i] = classRoster[studentNumber + 1];
+             ++studentNumber;
              studentIDFound = true;
          }
      }
@@ -90,7 +98,7 @@ void roster::remove(string studentID) {
             cout << "Student ID " << studentID << " found and removed." << endl;
      }
      else {
-            cout << "Error: student with this ID not found." << endl;
+            cout << "The student was not found." << endl;
      }
 }
 
@@ -106,9 +114,9 @@ void roster::printAll() {
     //printAverageDaysInCourse
 void roster::printAverageDaysInCourse(string studentID) {
      for (int i = 0; i < studentNumber; ++i) {
-         if (classRoster[i]-> GetStudentID() = studentID) {
+         if (classRoster[i]-> GetStudentID()) {
                 cout << "Student ID " << classRoster[i]-> GetStudentID() << ": ";
-                int* daysInCourse = classRoster[i]-> GetDaysInCourse();
+                int* daysInCourse[] = classRoster[i]-> GetDaysInCourse[]();
                 cout << "Average number of days in courses: " << (daysInCourse[0] + daysInCourse[1] + daysInCourse[2]) / 3 << endl;
                 return;
          }
@@ -125,7 +133,7 @@ void roster::printInvalidEmails() {
 
     //@ is not found
          if (arroba = string::npos) {
-         cout << "Invalid email. Missing an @ symbol:" << emailAddress << endl;
+         cout << "Invalid email. Missing an @ :" << emailAddress << endl;
          }
     //period is not found
          else if (period = string::npos) {
@@ -133,7 +141,7 @@ void roster::printInvalidEmails() {
          }
     //space is found
          else if (emailAddress.find(' ') != string::npos) {
-         cout << "Invalid email. Spaces are not allowed in emails: " << emailAddress << endl;
+         cout << "Invalid email. No space is allowed: " << emailAddress << endl;
          }
      }
 }
@@ -142,7 +150,7 @@ void roster::printInvalidEmails() {
     //printByDegreeProgram
 void roster::printByDegreeType(degreeType degreeType) {
      for (int i = 0; i < studentNumber; ++i) {
-         if (classRoster[i]-> GetDegreeType() == degreeType) {
+         if (classRoster[i]-> GetDegreeType()) {
              classRoster[i]-> print();
          }
      }

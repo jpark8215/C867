@@ -11,6 +11,16 @@ using namespace std;
 	//student class
 class student {
 
+private:
+
+	string studentID;
+	string firstName;
+	string lastName;
+	string emailAddress;
+	int age;
+	int* daysInCourse;
+	degreeType degreeType;
+
 public:
 
 	string studentID;
@@ -31,7 +41,7 @@ public:
 	void setEmailAddress(string emailAddress);
 	void setAge(int age);
 	void setDaysInCourse(int* daysInCourse);
-	void setDegreeType(degreeType degreeType);
+	void setDegreeType(enum degreeType);
 
 	// getter
 	string getStudentID();
@@ -40,17 +50,7 @@ public:
 	string getEmailAddress();
 	int getAge();
 	int* getDaysInCourse();
-	degreeType getDegreeType();
-
-private:
-
-	string studentID;
-	string firstName;
-	string lastName;
-	string emailAddress;
-	int age;
-	int* daysInCourse;
-	degreeType degreeType;
+	enum degreeType getDegreeType();
 
 
 	void print();

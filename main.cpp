@@ -24,10 +24,12 @@ int main() {
     };
 
     //instantiate class roster
-    roster* classRoster = new roster(studentData, 5, 20);
+    roster* classRoster = new roster(studentData[]);
    
     //Add students to array
- 
+    for (int i = 0; i < 5; i++) {
+        classRoster->add(studentData[i]);
+    }
 
     //classRoster.printAll();
     cout << "Displaying all students:" << endl;
@@ -57,21 +59,19 @@ int main() {
     
 
     //classRoster.remove("A3");
-    roster remove("A3");
+    roster erase(remove("A3"));
 
 
     // classRoster.printAll(); again
-    cout << "Removing A3" << endl;
     roster printAll();
 
 
     // classRoster.remove("A3"); again
-    roster remove("A3");
-    cout << endl;
+    roster erase(remove("A3"));
     
 
     //destructor
-    ~roster();
+    roster::~roster();
 
     return 0;
 };

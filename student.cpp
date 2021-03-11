@@ -6,14 +6,14 @@
 using namespace std;
 
     //constructor using parameters
-student::student(string studentID, string firstName, string lastName, string emailAddress, int age, int* daysInCourse, enum degreeType) {
+student::student(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse, enum degreeType) {
           this->studentID = studentID;
           this->firstName = firstName;
           this->lastName = lastName;
           this->age = age;
           this->emailAddress = emailAddress;
           for (int i = 0; i < 3; i++) {
-              this->daysInCourse[i] = daysInCourse[i];
+              this->daysInCourse[i] = daysInCourse;
           }
           this->degreeType = degreeType;
         }
@@ -36,9 +36,9 @@ student::student(string studentID, string firstName, string lastName, string ema
     void student::setAge(int age) {
         this->age = age;
     }
-    void student::setDaysInCourse(int* daysInCourse) {
+    void student::setDaysInCourse(int *daysInCourse) {
         for (int i = 0; i < 3; i++) {
-            this->daysInCourse[i] = daysInCourse[i];
+            this->daysInCourse[i] = daysInCourse;
         }
     }
     void setDegreeType(enum degreeType) {
