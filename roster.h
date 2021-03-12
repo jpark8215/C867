@@ -7,28 +7,27 @@
 #include "degree.h"
 #include "student.h"
 
-using namespace std;
 
 class roster {
 
 public:
 
-	const int studentNumber = 5;
-	student* classRoster;
+	static const int studentNumber = 5;
+	student* classRosterArray[studentNumber];
 
-	roster(int studentNumber, student* classRoster);
+	roster(int studentNumber, student* classRosterArray[]);
 	~roster();
 
-	void add(string studentID, string firstName, string lastName, string emailAddress, int age, int *daysInCourse, degreeType degreeType);
-	void remove(string studentID);
+	void add(std::string studentID, std::string firstName, std::string lastName, std::string emailAddress, int age, int *daysInCourse, degreeType degreeType);
+	void remove(std::string studentID);
 	void printAll();
-	void printAverageDaysInCourse(string studentID);
+	void printAverageDaysInCourse(std::string studentID);
 	void printInvalidEmails();
 	void printDegreeType(degreeType degreeType);
 
 private:
-	int studentNumber;
-	student* classRoster;
+	static const int studentNumber = 5;
+	student* classRosterArray;
 
 };
 

@@ -1,42 +1,52 @@
 #include <iostream>
+#include <string>
 
 #include "degree.h"
 #include "student.h"
 
-using namespace std;
+class student {
 
+private:
+
+    std::string studentID;
+    std::string firstName;
+    std::string lastName;
+    std::string emailAddress;
+    int age;
+    int* daysInCourse;
+    degreeType degreeType;
+
+public:
     //constructor using parameters
-student::student(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse, enum degreeType) {
-          this->studentID = studentID;
-          this->firstName = firstName;
-          this->lastName = lastName;
-          this->age = age;
-          this->emailAddress = emailAddress;
-          for (int i = 0; i < 3; i++) {
-              this->daysInCourse[i] = daysInCourse;
-          }
-          this->degreeType = degreeType;
+    student(std::string studentID, std::string firstName, std::string lastName, std::string emailAddress, int age, int daysInCourse, enum degreeType) {
+        this->studentID = studentID;
+        this->firstName = firstName;
+        this->lastName = lastName;
+        this->age = age;
+        this->emailAddress = emailAddress;
+        for (int i = 0; i < 3; i++) {
+            this->daysInCourse[i] = daysInCourse;
         }
-  
- student::~student() {
- }
+        this->degreeType = degreeType;
+    }
 
-    void student::setStudentID(string studentID) {
+
+    void setStudentID(std::string studentID) {
         this->studentID = studentID;
     }
-    void student::setFirstName(string firstName) {
+    void setFirstName(std::string firstName) {
         this->firstName = firstName;
     }
-    void student::setLastName(string lastName) {
+    void setLastName(std::string lastName) {
         this->lastName = lastName;
     }
-    void student::setEmailAddress(string emailAddress) {
+    void setEmailAddress(std::string emailAddress) {
         this->emailAddress = emailAddress;
     }
-    void student::setAge(int age) {
+    void setAge(int age) {
         this->age = age;
     }
-    void student::setDaysInCourse(int *daysInCourse) {
+    void setDaysInCourse(int daysInCourse) {
         for (int i = 0; i < 3; i++) {
             this->daysInCourse[i] = daysInCourse;
         }
@@ -46,22 +56,22 @@ student::student(string studentID, string firstName, string lastName, string ema
     }
 
 
-    string student::getStudentID() {
+    std::string getStudentID() {
         return studentID;
     }
-    string student::getFirstName() {
+    std::string getFirstName() {
         return firstName;
     }
-    string student::getLastName() {
+    std::string getLastName() {
         return lastName;
     }
-    string student::getEmailAddress() {
+    std::string getEmailAddress() {
         return emailAddress;
     }
-    int student::getAge() {
+    int getAge() {
         return age;
     }
-    int* student::getDaysInCourse() {
+    int* getDaysInCourse() {
         return daysInCourse;
     }
     enum degreeType getDegreeType() {
@@ -69,11 +79,14 @@ student::student(string studentID, string firstName, string lastName, string ema
     }
 
 
-    void student::print() {
-        cout << studentID << "\t"
+    void print() {
+        std::cout << studentID << "\t"
             << "First Name: " << firstName << "\t"
             << "Last Name: " << lastName << "\t"
             << "Age: " << age << "\t"
             << "daysInCourse: {" << daysInCourse[0] << ", " << daysInCourse[1] << ", " << daysInCourse[2] << "}" << "\t"
-            << "Degree Program: " << degreeTypeStrings[getDegreeType()];
-    }
+            << "Degree Program: " << degreeTypeStrings;
+    };
+
+    ~student();
+};
