@@ -20,7 +20,6 @@ public:
 	int* daysInCourse;
 	enum class degreeType;
 
-	student();
 	~student();
 
 	// setter 
@@ -29,7 +28,7 @@ public:
 	void setLastName(std::string lastName);
 	void setEmailAddress(std::string emailAddress);
 	void setAge(int age);
-	void setDaysInCourse(int* daysInCourse);
+	void setDaysInCourse(int daysInCourse);
 	void setDegreeType(enum degreeType);
 
 	// getter

@@ -11,14 +11,11 @@
 class roster {
 
 public:
-
 	static const int studentNumber = 5;
 	student* classRosterArray[studentNumber];
 
-	roster(int studentNumber, student* classRosterArray[]);
-	~roster();
 
-	void add(std::string studentID, std::string firstName, std::string lastName, std::string emailAddress, int age, int *daysInCourse, degreeType degreeType);
+	void add(std::string studentID, std::string firstName, std::string lastName, std::string emailAddress, int age, int daysInCourse, degreeType degreeType);
 	void remove(std::string studentID);
 	void printAll();
 	void printAverageDaysInCourse(std::string studentID);
@@ -27,7 +24,7 @@ public:
 
 private:
 	static const int studentNumber = 5;
-	student* classRosterArray;
+	student* classRosterArray[studentNumber];
 
 };
 

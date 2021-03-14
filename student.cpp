@@ -30,6 +30,7 @@ public:
         this->degreeType = degreeType;
     }
 
+    ~student();
 
     void setStudentID(std::string studentID) {
         this->studentID = studentID;
@@ -88,5 +89,4 @@ public:
             << "Degree Program: " << degreeTypeStrings;
     };
 
-    ~student();
 };
