@@ -35,7 +35,7 @@ int main() {
     
         //Add students to array
     for (int i = 0; i < 5; i++) {
-        roster add (std::string studentID, std::string firstName, std::string lastName, std::string emailAddress, int age, int daysInCourse, enum degreeType);
+        roster add (std::string studentID, std::string firstName, std::string lastName, std::string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, degreeType courseType);
     }
 
 
@@ -79,7 +79,6 @@ int main() {
     
 
     //destructor
-    ~roster();
 
     return 0;
 };

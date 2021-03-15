@@ -3,7 +3,7 @@
 
 #include <string>
 
-enum class degreeType { SECURITY, NETWORK, SOFTWARE };
+enum degreeType { SECURITY, NETWORK, SOFTWARE };
 std::string degreeTypeStrings[] = { "SECURITY", "NETWORK", "SOFTWARE" };
 
 #endif /*degree_h*/

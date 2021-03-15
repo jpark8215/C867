@@ -9,23 +9,21 @@
 
 
 class roster {
-
 public:
+
 	static const int studentNumber = 5;
-	student* classRosterArray[studentNumber];
+	student classRosterArray[studentNumber];
 
 
-	void add(std::string studentID, std::string firstName, std::string lastName, std::string emailAddress, int age, int daysInCourse, degreeType degreeType);
+	void add(std::string studentID, std::string firstName, std::string lastName, std::string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, degreeType courseType);
 	void remove(std::string studentID);
 	void printAll();
 	void printAverageDaysInCourse(std::string studentID);
 	void printInvalidEmails();
-	void printDegreeType(degreeType degreeType);
+	void printDegreeType(degreeType courseType);
 
-private:
-	static const int studentNumber = 5;
-	student* classRosterArray[studentNumber];
-
+	roster();
+	~roster();
 };
 
 #endif /*roster.h*/
