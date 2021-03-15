@@ -13,46 +13,48 @@ student* classRosterArray[roster::studentNumber];
 void parse(const std::string studentData[roster::studentNumber]) {
     for (int i = 0; i < roster::studentNumber; i++) {
         size_t rhs = studentData[i].find(",");
-        classRosterArray[i].studentID = studentData[i].substr(0, rhs);
+        std::string s1 = studentData[i].substr(0, rhs);
 
         size_t lhs = rhs + 1;
         rhs = studentData[i].find(",", lhs);
-        classRosterArray[i].firstName = studentData[i].substr(lhs, rhs - lhs);
+        std::string s2 = studentData[i].substr(lhs, rhs - lhs);
 
         lhs = rhs + 1;
         rhs = studentData[i].find(",", lhs);
-        classRosterArray[i].lastName = studentData[i].substr(lhs, rhs - lhs);
+        std::string s3 = studentData[i].substr(lhs, rhs - lhs);
 
         lhs = rhs + 1;
         rhs = studentData[i].find(",", lhs);
-        classRosterArray[i].emailAddress = studentData[i].substr(lhs, rhs - lhs);
+        std::string s4 = studentData[i].substr(lhs, rhs - lhs);
 
         lhs = rhs + 1;
         rhs = studentData[i].find(",", lhs);
-        classRosterArray[i].age = studentData[i].substr(lhs, rhs - lhs);
+        int s5 = stoi(studentData[i].substr(lhs, rhs - lhs));
+        
+        lhs = rhs + 1;
+        rhs = studentData[i].find(",", lhs);
+        int s6 = stoi(studentData[i].substr(lhs, rhs - lhs));
 
         lhs = rhs + 1;
         rhs = studentData[i].find(",", lhs);
-        classRosterArray[i].daysInCourse1 = studentData[i].substr(lhs, rhs - lhs);
+        int s7 = stoi(studentData[i].substr(lhs, rhs - lhs));
 
         lhs = rhs + 1;
         rhs = studentData[i].find(",", lhs);
-        classRosterArray[i].daysInCourse2 = studentData[i].substr(lhs, rhs - lhs);
+        int s8 = stoi(studentData[i].substr(lhs, rhs - lhs));
 
         lhs = rhs + 1;
         rhs = studentData[i].find(",", lhs);
-        classRosterArray[i].daysInCourse3 = studentData[i].substr(lhs, rhs - lhs);
+        std::string s9 = studentData[i].substr(lhs, rhs - lhs);
 
-        lhs = rhs + 1;
-        rhs = studentData[i].find(",", lhs);
-        classRosterArray[i].degreeType = studentData[i].substr(lhs, rhs - lhs);
+        degreeType courseType = SECURITY;
+        //if () 
+        //call add, give all the arguments it needs
     }
-
-
+    
+    //add will build the student, pointer
     //add each student obj to array    
-    void add(studentData[0], studentData[1], studentData[2], studentData[3], studentData[4], studentData[5], studentData[6], studentData[7], studentData[8]) {
-    }
-
+    
 
     //destructor
     roster::~roster() {
@@ -64,17 +66,9 @@ void parse(const std::string studentData[roster::studentNumber]) {
 
     //add
  void add(std::string studentID, std::string firstName, std::string lastName, std::string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, degreeType courseType) {
-     student *classRosterArray = new student();
-     this->classRosterArray->setStudentID(studentID);
-     this->classRosterArray->setFirstName(studentID);
-     this->classRosterArray->setLastName(studentID);
-     this->classRosterArray->setEmailAddress(studentID);
-     this->classRosterArray->setAge(age);
-     this->classRosterArray->setdaysInCourse1(daysInCourse1);
-     this->classRosterArray->setdaysInCourse2(daysInCourse2);
-     this->classRosterArray->setdaysInCourse3(daysInCourse3);
-     this->classRosterArray->setDegreeType(courseType);
-
+    //// student *classRosterArray = new student();
+;
+//call the student constructor using the new command, and put the result into the class roster array
  }
 
 

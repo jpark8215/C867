@@ -8,7 +8,7 @@
 	
 	//student class
 class student {
-	friend class roster;
+	
 
 private:
 
