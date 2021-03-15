@@ -30,7 +30,7 @@ void parse(const std::string studentData[roster::studentNumber]) {
         lhs = rhs + 1;
         rhs = studentData[i].find(",", lhs);
         int s5 = stoi(studentData[i].substr(lhs, rhs - lhs));
-        
+
         lhs = rhs + 1;
         rhs = studentData[i].find(",", lhs);
         int s6 = stoi(studentData[i].substr(lhs, rhs - lhs));
@@ -48,16 +48,26 @@ void parse(const std::string studentData[roster::studentNumber]) {
         std::string s9 = studentData[i].substr(lhs, rhs - lhs);
 
         degreeType courseType = SECURITY;
-        //if () 
-        //call add, give all the arguments it needs
+        if (std::string s9 = "SECURITY") {
+            courseType = SECURITY
+        }
+        else if (std::string s9 = "NETWORK") {
+            courseType = NETWORK
+        }
+        else (std::string s9 = "SOFTWARE") {
+            courseType = SOFTWARE
+        };
+
+        //call add, give all the arguments it need,sadd will build the student, pointer
+
     }
-    
-    //add will build the student, pointer
+
+
     //add each student obj to array    
-    
+
 
     //destructor
-    roster::~roster() {
+    ~roster() {
         delete classRosterArray;
         return;
     }
