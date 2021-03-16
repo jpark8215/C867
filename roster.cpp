@@ -1,13 +1,13 @@
 #include <iostream>
 #include <string>
+#include <vector>
 
 #include "roster.h"
 #include "student.h"
 
 
-//1.  Create an array of pointers, classRosterArray, to hold the data provided in the “studentData Table.”
+    //1.  Create an array of pointers, classRosterArray, to hold the data provided in the “studentData Table.”
 student* classRosterArray[roster::studentNumber];
-
 
     //parse each set    
 void parse(const std::string studentData[roster::studentNumber]) {
@@ -47,51 +47,54 @@ void parse(const std::string studentData[roster::studentNumber]) {
         rhs = studentData[i].find(",", lhs);
         std::string s9 = studentData[i].substr(lhs, rhs - lhs);
 
-        degreeType courseType = SECURITY;
-        if (std::string s9 = "SECURITY") {
-            courseType = SECURITY
-        }
-        else if (std::string s9 = "NETWORK") {
-            courseType = NETWORK
-        }
-        else (std::string s9 = "SOFTWARE") {
-            courseType = SOFTWARE
-        };
+            //degreeType courseType = SECURITY;
+            //if (std::string s9 = "SECURITY") {
+            //    degreeType courseType = SECURITY;
+            //}
+            //else if (std::string s9 = "NETWORK") {
+            //    degreeType courseType = NETWORK;
+            //}
+            //else (std::string s9 = "SOFTWARE") {
+            //    degreeType courseType = SOFTWARE;
+            //}
 
-        //call add, give all the arguments it needs     
-        //add will build the student, pointer    
-        //add each student obj to array    
+        degreeType roster(std::string s9) {
+            if (s9 == "SECURITY") return SECURITY;
+            else if (s9 == "NETWORK") return NETWORK;
+            else if (s9 == "SOFTWARE") return SOFTWARE;
+            else return NONE;
+        }
 
+        //call add, give all the arguments it needs  //add will build the student, pointer //add each student obj to array    
+        classRosterArray.add();
     }
+}
     //destructor
-    ~roster() {
-        delete classRosterArray[];
-        return;
-    }
+roster::~roster() {
+    delete classRosterArray[];
+    return;
 }
 
     //add//call the student constructor using the new command, and put the result into the class roster array
-
  void add(std::string studentID, std::string firstName, std::string lastName, std::string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, degreeType courseType) {
-      student* classRosterArray[] = new student();
+      classRosterArray[roster::studentNumber] = new student();
  }
-
 
     //remove
  void remove(std::string studentID) {
-     bool studentIDFound = false;
-     for (int i = 0; (i < roster::studentNumber) && !studentIDFound; ++i) {
-         if (classRosterArray[i]-> GetStudentID()) {
+     bool idmatch = false;
+     for (int i = 0; (i < roster::studentNumber) && !idmatch; ++i) {
+         if (classRosterArray[i]-> GetStudentID() == studentID) {
              classRosterArray[i] = classRosterArray[roster::studentNumber + 1];
-             ++studentNumber;
-             studentIDFound = true;
+             //++roster::studentNumber;
+             idmatch = true;
          }
      }
-     if (studentIDFound) {
-         std::cout << "Student ID " << studentID << " found and removed." << std::endl;
+     if (idmatch) {
+         std::cout << "StudentID " << studentID << "removed." << std::endl;
      }
      else {
-         std::cout << "The student was not found." << std::endl;
+         std::cout << "The studentID was not found." << std::endl;
      }
  }
 
@@ -103,28 +106,26 @@ void parse(const std::string studentData[roster::studentNumber]) {
      }
  }
 
-
     //printAverageDaysInCourse
  void printAverageDaysInCourse(std::string studentID) {
      for (int i = 0; i < roster::studentNumber; ++i) {
          if (classRosterArray[i]-> GetStudentID()) {
-             std::cout << "Student ID " << classRosterArray[i]-> GetStudentID() << ": ";
+             std::cout << "StudentID " << classRosterArray[i]-> GetStudentID() << ": ";
              int daysInCourse1 = classRosterArray[i]-> GetDaysInCourse1();
              int daysInCourse2 = classRosterArray[i]-> GetDaysInCourse2();
              int daysInCourse3 = classRosterArray[i]-> GetDaysInCourse3();
-             std::cout << "Average number of days in courses: " << (daysInCourse1 + daysInCourse2 + daysInCourse3) / 3 << endl;
+             std::cout << "Average number of days in the three courses: " << (daysInCourse1 + daysInCourse2 + daysInCourse3) / 3 << endl;
              return;
          }
      }
  }
 
-
     //printInvalidEmails
  void printInvalidEmails() {
      for (int i = 0; i < roster::studentNumber; ++i) {
-         std::string emailAddress = classRosterArray[i]-> GetEmail();
+         std::string emailAddress = classRosterArray[i]-> GetEmailAddress();
          std::string arroba = emailAddress.find('@');
-         std::string period = emailAddress.find('.', arroba);
+         std::string period = emailAddress.find('.');
 
          //@ is not found
          if (arroba = std::string::npos) {
@@ -141,8 +142,6 @@ void parse(const std::string studentData[roster::studentNumber]) {
      }
  }
     
-
-
     //printByDegreeProgram
  void printByDegreeType(degreeType courseType) {
      for (int i = 0; i < roster::studentNumber; ++i) {
