@@ -9,7 +9,6 @@
 	//student class
 class student {
 	
-
 private:
 
 	std::string studentID;

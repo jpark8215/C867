@@ -87,3 +87,20 @@ void student::print() {
         << "daysInCourse: {" << daysInCourse1 << ", " << daysInCourse2 << ", " << daysInCourse3 << "}" << "\t"
         << "Degree Program: " << courseType;
 };
+
+
+//D.For the Student class, do the following :
+//1.  Create the class Student  in the files student.h and student.cpp, which includes each of the following variables :
+//•  student ID
+//•  first name
+//•   last name
+//•  email address
+//•  age
+//•  array of number of days to complete each course
+//•  degree program
+//2.  Create each of the following functions in the Student class :
+//    a.an accessor(i.e., getter) for each instance variable from part D1
+//    b.a mutator(i.e., setter) for each instance variable from part D1
+//    c.All external accessand changes to any instance variables of the Student class must be done using accessorand mutator functions.
+//    d.constructor using all of the input parameters provided in the table
+//    e.print() to print specific student data
