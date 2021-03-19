@@ -1,24 +1,29 @@
 #include <iostream>
 #include <string>
 
-#include "degree.h"
 #include "student.h"
 
+student::student() {
 
+}
     //constructor using parameters
-student::student(std::string studentID, std::string firstName, std::string lastName, std::string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, degreeType courseType) {
+student::student(std::string studentID, std::string firstName, std::string lastName, std::string emailAddress, int age, int daysInCourse[], degreeType courseType) {
+//student::student(std::string studentID, std::string firstName, std::string lastName, std::string emailAddress, int age, int* daysInCourse, degreeType courseType) {
     this->studentID = studentID;
     this->firstName = firstName;
     this->lastName = lastName;
     this->age = age;
     this->emailAddress = emailAddress;
-    this->daysInCourse1 = daysInCourse1;
+    daysInCourse = daysInCourse;
+    
+  /*  this->daysInCourse1 = daysInCourse1;
     this->daysInCourse2 = daysInCourse2;
-    this->daysInCourse3 = daysInCourse3;
+    this->daysInCourse3 = daysInCourse3;*/
     this->courseType = courseType;
 }
 
 student::~student() {
+
 }
 
 void student::setStudentID(std::string studentID) {
@@ -36,17 +41,22 @@ void student::setEmailAddress(std::string emailAddress) {
 void student::setAge(int age) {
     this->age = age;
 }
-void student::setDaysInCourse1(int daysInCourse1) {
-    this->daysInCourse1 = daysInCourse1;
+void student::setDaysInCourse(int daysInCourse[]) {
+    for (int i = 0; i < 3; i++) {
+        this->daysInCourse[i] = daysInCourse[i];
+    }
 }
-void student::setDaysInCourse2(int daysInCourse2) {
-    this->daysInCourse2 = daysInCourse2;
-}
-void student::setDaysInCourse3(int daysInCourse3) {
-    this->daysInCourse3 = daysInCourse3;
-}
+//void student::setDaysInCourse1(int daysInCourse1) {
+//    this->daysInCourse1 = daysInCourse1;
+//}
+//void student::setDaysInCourse2(int daysInCourse2) {
+//    this->daysInCourse2 = daysInCourse2;
+//}
+//void student::setDaysInCourse3(int daysInCourse3) {
+//    this->daysInCourse3 = daysInCourse3;
+//}
 void student::setDegreeType(degreeType courseType) {
-    degreeType courseType = courseType;
+    courseType;
 }
 
 
@@ -65,15 +75,18 @@ std::string student::getEmailAddress() {
 int student::getAge() {
     return age;
 }
-int student::getDaysInCourse1() {
-    return daysInCourse1;
+int *student::getDaysInCourse() {
+    return daysInCourse;
 }
-int student::getDaysInCourse2() {
-    return daysInCourse2;
-}
-int student::getDaysInCourse3() {
-    return daysInCourse3;
-}
+//int student::getDaysInCourse1() {
+//    return daysInCourse1;
+//}
+//int student::getDaysInCourse2() {
+//    return daysInCourse2;
+//}
+//int student::getDaysInCourse3() {
+//    return daysInCourse3;
+//}
 degreeType student::getDegreeType() {
     return courseType;
 }
@@ -84,8 +97,9 @@ void student::print() {
         << "First Name: " << firstName << "\t"
         << "Last Name: " << lastName << "\t"
         << "Age: " << age << "\t"
-        << "daysInCourse: {" << daysInCourse1 << ", " << daysInCourse2 << ", " << daysInCourse3 << "}" << "\t"
-        << "Degree Program: " << courseType;
+        << "daysInCourse: {" << daysInCourse[0] << ", " << daysInCourse[1] << ", " << daysInCourse[2] << "}" << "\t"
+        //<< "daysInCourse: {" << daysInCourse1 << ", " << daysInCourse2 << ", " << daysInCourse3 << "}" << "\t"
+        << "Degree Program: " << degreeTypeStrings[courseType];
 };
 
 

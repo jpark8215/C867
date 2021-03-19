@@ -4,6 +4,6 @@
 #include <string>
 
 enum degreeType { SECURITY, NETWORK, SOFTWARE };
-std::string degreeTypeStrings[] = { "SECURITY", "NETWORK", "SOFTWARE" };
+static std::string degreeTypeStrings[] = { "SECURITY", "NETWORK", "SOFTWARE" };
 
 #endif /*degree_h*/
