@@ -16,13 +16,14 @@ private:
 	std::string lastName;
 	std::string emailAddress;
 	int age;
+	//int daysInCourse[3];
 	int daysInCourse1;
 	int daysInCourse2;
 	int daysInCourse3;
 	degreeType courseType;
 
-
 public:
+
 	student();
 	student(std::string studentID, std::string firstName, std::string lastName, std::string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, degreeType courseType);
 	~student();
@@ -33,11 +34,11 @@ public:
 	void setLastName(std::string lastName);
 	void setEmailAddress(std::string emailAddress);
 	void setAge(int age);
+	//void setDaysInCourse(int* daysInCourse);
 	void setDaysInCourse1(int daysInCourse1);
 	void setDaysInCourse2(int daysInCourse2);
 	void setDaysInCourse3(int daysInCourse3);
 	void setDegreeType(degreeType courseType);
-
 
 	// getter
 	std::string getStudentID();
@@ -45,11 +46,23 @@ public:
 	std::string getLastName();
 	std::string getEmailAddress();
 	int getAge();
+	//int* getDaysInCourse();
 	int getDaysInCourse1();
 	int getDaysInCourse2();
 	int getDaysInCourse3();
 	degreeType getDegreeType();
 
+	//static std::string getDegreeType(degreeType dp) {
+	//	if (dp == degreeType::SECURITY) {
+	//		return "SECURITY";
+	//	}
+	//	if (dp == degreeType::NETWORK) {
+	//		return "NETWORK";
+	//	}
+	//	if (dp == degreeType::SOFTWARE) {
+	//		return "SOFTWARE";
+	//	}
+	//}
 
 	void print();
 };
